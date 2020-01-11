@@ -20,6 +20,7 @@ header {
   justify-content: space-between;
   width: calc(100%);
   background: white;
+  color: white;
 }
 header a {
   text-decoration: none;
@@ -134,16 +135,103 @@ header nav ul li a {
   font-family: Montserrat, sans-serif;
 }
 
+.product-wrapper {
+  color: white;
+  display: grid;
+  grid-template-columns: auto;
+}
+.product-wrapper section {
+  padding: 3em;
+}
+.product-wrapper section h1,
+.product-wrapper section h2,
+.product-wrapper section .read-btn {
+  text-transform: uppercase;
+  margin: 0;
+}
+.product-wrapper section h2 {
+  font-size: 1.4rem;
+}
+.product-wrapper section .read-btn {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background: url("./public/static/assets/play-button.svg") no-repeat -8px;
+  padding-left: 1em;
+}
+.product-wrapper section .primary {
+  color: white;
+  padding: 1.5em 1.9em 1.5em calc(0.7em + 15px);
+  background-position: 10.7em;
+  background-size: 1em;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 3em;
+}
+.product-wrapper section .secondary {
+  color: white;
+  padding: 1.5em 1.5em 1.5em calc(3em + 25px);
+  background-position: 3em;
+  background-size: 1em;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 3em;
+}
+.product-wrapper section .clipper {
+  overflow: hidden;
+}
+.product-wrapper section .clipper b {
+  font-family: Garamond, sans-serif;
+}
+.product-wrapper section.hero {
+  padding-top: 8em;
+  background: url("./public/static/assets/heroimagemobilehires1.jpeg") fixed;
+  background-size: cover;
+}
+.product-wrapper section.hero p {
+  width: 60%;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+.product-wrapper section.hero h1 {
+  font-size: 2.4rem;
+}
+.product-wrapper section.sidebar,
+.product-wrapper section.subscribe {
+  font-size: 0.9rem;
+  line-height: 1.6em;
+}
+.product-wrapper section.sidebar {
+  background: #cc709e;
+}
+.product-wrapper section.sidebar .read-btn {
+  margin-top: 2em;
+  display: block;
+}
+.product-wrapper section.subscribe {
+  color: black;
+}
+.product-wrapper section.subscribe input {
+  width: calc(100% - 2em);
+  padding: 1em;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 1em;
+}
+.product-wrapper section.subscribe button {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 1em;
+  border: none;
+  font-family: Montserrat, sans-serif;
+}
+
 @media only screen and (min-width: 768px) {
   html {
     font-size: 20px;
   }
 }
 @media only screen and (min-width: 1024px) {
-  header {
-    background: none;
-  }
-
   .wrapper {
     grid-template-columns: 70% auto;
     grid-template-rows: 60% auto;
@@ -162,6 +250,27 @@ header nav ul li a {
   }
   .wrapper section.sidebar {
     padding-top: 5em;
+  }
+
+  .product-wrapper {
+    grid-template-columns: 80% auto;
+    grid-template-rows: auto;
+    grid-template-areas: "hero featured";
+    height: 100vh;
+  }
+  .product-wrapper section.product-hero-wrapper {
+    display: grid;
+    padding-top: 60px;
+    padding-bottom: 0;
+    grid-area: hero;
+    overflow-y: auto;
+  }
+  .product-wrapper section.product-hero-wrapper .product-grid-container {
+    display: grid;
+    grid-area: hero;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1.4rem;
+    overflow-y: auto;
   }
 }
 @media only screen and (min-width: 1800px) {
@@ -211,6 +320,12 @@ section.product-hero-wrapper button {
   color: white;
   border: none;
   font-family: Montserrat, sans-serif;
+}
+
+section.sidebar-products {
+  background: #e9ebee;
+  border-left: black 1px solid;
+  color: black;
 }
 
 /*# sourceMappingURL=styles.css.map */

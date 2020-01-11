@@ -3,12 +3,15 @@ import Navbar from "../components/Navbar";
 import SettingSprayImage from "../public/static/assets/Alto-Setting-Spray.png";
 import Moisturizer from "../public/static/assets/forte.png";
 import PowderImage from "../public/static/assets/mezzopowder.png";
+import SheShampoo from "../public/static/assets/Shampoo-Bottle-Mockup.png";
+import Handwash from "../public/static/assets/Handwash-Bottle-Mockup.png";
+import Moisture from "../public/static/assets/mezzomoisture.png";
 
 export default () => {
   return (
     <div>
       <Navbar style={{ paddingBottom: "20px" }} />
-      <div className="wrapper">
+      <div className="product-wrapper">
         <section className="product-hero-wrapper">
           <div className="product-grid-container">
             <div className="product-grid-item">
@@ -53,10 +56,52 @@ export default () => {
                 <button>Find Near Me</button>
               </div>
             </div>
+            <div className="product-grid-item">
+              <div className="product-image-wrapper">
+                <img
+                  className="product-image"
+                  src={SheShampoo}
+                  alt="Forte-Moisturizer"
+                />
+              </div>
+              <h2>She™|Shampoo</h2>
+              <p>$59.99</p>
+              <div className="product-button-container">
+                <button>Find Near Me</button>
+              </div>
+            </div>
+            <div className="product-grid-item">
+              <div className="product-image-wrapper">
+                <img
+                  className="product-image"
+                  src={Handwash}
+                  alt="Forte-Moisturizer"
+                />
+              </div>
+              <h2>OO™|Hand Wash</h2>
+              <p>$5.99</p>
+              <div className="product-button-container">
+                <button>Find Near Me</button>
+              </div>
+            </div>
+            <div className="product-grid-item">
+              <div className="product-image-wrapper">
+                <img
+                  className="product-image"
+                  src={Moisture}
+                  alt="Forte-Moisturizer"
+                />
+              </div>
+              <h2>Mezzo™|Moisture</h2>
+              <p>$9.99</p>
+              <div className="product-button-container">
+                <button>Find Near Me</button>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="sidebar">
+        <section className="sidebar-products">
           <div className="inner">
             <div className="clipper">
               <h2>Featured</h2>
@@ -68,21 +113,9 @@ export default () => {
                 formulated nourishing high gloss oils along deep and rich
                 pigments. A new year. A new you.
               </p>
-              <a href="#" className="read-btn secondary">
-                Find Out More
-              </a>
-            </div>
-          </div>
-        </section>
-        <section className="subscribe">
-          <div className="inner">
-            <div className="clipper">
-              <h2>Subscribe</h2>
-            </div>
-            <div className="animate-panel">
-              <p>Stay updated on new products.</p>
-              <input type="text" name="email" placeholder="Email Address" />
-              <button className="cta">Subscribe</button>
+              <div className="product-button-container">
+                <button>Find Near Me</button>
+              </div>
             </div>
           </div>
         </section>
