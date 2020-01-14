@@ -44,6 +44,31 @@ header nav ul li a {
   padding: 1em;
 }
 
+.sub-nav {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100%);
+  background: black;
+  color: white;
+}
+.sub-nav span {
+  text-decoration: none;
+  color: white;
+  font-size: 0.6em;
+}
+.sub-nav nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.sub-nav nav ul li a {
+  padding: 1em;
+}
+
 .wrapper {
   color: white;
   display: grid;
@@ -150,7 +175,7 @@ header nav ul li a {
   margin: 0;
 }
 .product-wrapper section h2 {
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .product-wrapper section .read-btn {
   text-decoration: none;
@@ -226,6 +251,16 @@ header nav ul li a {
   font-family: Montserrat, sans-serif;
 }
 
+.cart {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px gray solid;
+  font-size: 0.8rem;
+}
+
+.cart-title {
+  text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
   html {
     font-size: 20px;
@@ -253,6 +288,7 @@ header nav ul li a {
   }
 
   .product-wrapper {
+    padding-bottom: 10px;
     grid-template-columns: 80% auto;
     grid-template-rows: auto;
     grid-template-areas: "hero featured";
@@ -280,7 +316,8 @@ header nav ul li a {
 }
 section.product-hero-wrapper {
   color: black;
-  padding-top: 8em;
+  padding: 8em 20px 20px;
+  margin: 0;
 }
 section.product-hero-wrapper p {
   width: 60%;
@@ -292,8 +329,13 @@ section.product-hero-wrapper h1 {
 }
 section.product-hero-wrapper .product-grid-container {
   display: grid;
+  justify-content: space-around;
   grid-template-columns: auto;
   grid-row-gap: 5rem;
+  margin: 0;
+}
+section.product-hero-wrapper .product-grid-container .product-grid-item {
+  text-align: center;
 }
 section.product-hero-wrapper .product-grid-container .product-grid-item .product-image-wrapper {
   text-align: center;
@@ -314,8 +356,9 @@ section.product-hero-wrapper .product-button-container {
   padding-top: 1rem;
 }
 section.product-hero-wrapper button {
-  padding: 1em !important;
-  width: 100%;
+  cursor: pointer;
+  padding: 1em;
+  width: 190px;
   background: black;
   color: white;
   border: none;
@@ -323,9 +366,19 @@ section.product-hero-wrapper button {
 }
 
 section.sidebar-products {
-  background: #e9ebee;
+  background: white;
   border-left: black 1px solid;
   color: black;
+  padding: 20px 8px 10px 8px;
+  overflow-y: auto;
+}
+section.sidebar-products button {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 1em;
+  border: none;
+  font-family: Montserrat, sans-serif;
 }
 
 /*# sourceMappingURL=styles.css.map */

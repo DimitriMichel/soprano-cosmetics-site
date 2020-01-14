@@ -50,6 +50,32 @@ header {
   }
 }
 
+.sub-nav {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100%);
+  background: black;
+  color: white;
+  span {
+    text-decoration: none;
+    color: white;
+    font-size: 0.6em;
+  }
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      padding: 1em;
+    }
+  }
+}
+
 .wrapper {
   color: white;
   display: grid;
@@ -154,7 +180,7 @@ header {
       margin: 0;
     }
     h2 {
-      font-size: 1.4rem;
+      font-size: 1rem;
     }
     .read-btn {
       text-decoration: none;
@@ -231,7 +257,14 @@ header {
     }
   }
 }
-
+.cart {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px gray solid;
+  font-size: 0.8rem;
+}
+.cart-title {
+  text-align: center;
+}
 @media only screen and (min-width: 768px) {
   html {
     font-size: 20px;
@@ -263,10 +296,10 @@ header {
     }
   }
   .product-wrapper {
+    padding-bottom: 10px;
     grid-template-columns: 80% auto;
     grid-template-rows: auto;
-    grid-template-areas:
-      "hero featured";
+    grid-template-areas: "hero featured";
     height: 100vh;
 
     section.product-hero-wrapper {
@@ -274,13 +307,13 @@ header {
       padding-top: 60px;
       padding-bottom: 0;
       grid-area: hero;
-      overflow-y:auto;
+      overflow-y: auto;
       .product-grid-container {
         display: grid;
         grid-area: hero;
         grid-template-columns: auto auto auto;
         grid-gap: 1.4rem;
-        overflow-y:auto;
+        overflow-y: auto;
       }
     }
   }
@@ -295,7 +328,9 @@ header {
 
 section.product-hero-wrapper {
   color: black;
-  padding-top: 8em;
+  padding: 8em 20px 20px;
+  margin: 0;
+
   p {
     width: 60%;
     font-size: 1.3rem;
@@ -306,9 +341,12 @@ section.product-hero-wrapper {
   }
   .product-grid-container {
     display: grid;
+    justify-content: space-around;
     grid-template-columns: auto;
     grid-row-gap: 5rem;
+    margin: 0;
     .product-grid-item {
+      text-align: center;
       .product-image-wrapper {
         text-align: center;
         .product-image {
@@ -330,8 +368,9 @@ section.product-hero-wrapper {
     padding-top: 1rem;
   }
   button {
-    padding: 1em !important;
-    width: 100%;
+    cursor: pointer;
+    padding: 1em;
+    width: 190px;
     background: $submit-btn-bg-color;
     color: $submit-btn-color;
     border: none;
@@ -339,7 +378,17 @@ section.product-hero-wrapper {
   }
 }
 section.sidebar-products {
-  background: #e9ebee;
+  background: white;
   border-left: black 1px solid;
   color: black;
+  padding: 20px 8px 10px 8px;
+  overflow-y: auto;
+  button {
+    width: 100%;
+    background: $submit-btn-bg-color;
+    color: $submit-btn-color;
+    padding: 1em;
+    border: none;
+    font-family: Montserrat, sans-serif;
+  }
 }
