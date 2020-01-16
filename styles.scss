@@ -307,7 +307,7 @@ header {
       padding-top: 60px;
       padding-bottom: 0;
       grid-area: hero;
-      overflow-y: auto;
+      overflow: hidden;
       .product-grid-container {
         display: grid;
         grid-area: hero;
@@ -382,7 +382,7 @@ section.sidebar-products {
   border-left: black 1px solid;
   color: black;
   padding: 20px 8px 10px 8px;
-  overflow-y: auto;
+  overflow: hidden;
   button {
     width: 100%;
     background: $submit-btn-bg-color;

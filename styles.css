@@ -299,7 +299,7 @@ header nav ul li a {
     padding-top: 60px;
     padding-bottom: 0;
     grid-area: hero;
-    overflow-y: auto;
+    overflow: hidden;
   }
   .product-wrapper section.product-hero-wrapper .product-grid-container {
     display: grid;
@@ -370,7 +370,7 @@ section.sidebar-products {
   border-left: black 1px solid;
   color: black;
   padding: 20px 8px 10px 8px;
-  overflow-y: auto;
+  overflow: hidden;
 }
 section.sidebar-products button {
   width: 100%;

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import Cart from "../components/Cart";
-import Products from "../components/Products";
 import SettingSprayImage from "../public/static/assets/Alto-Setting-Spray.png";
 import Moisturizer from "../public/static/assets/forte.png";
 import PowderImage from "../public/static/assets/mezzopowder.png";
 import SheShampoo from "../public/static/assets/Shampoo-Bottle-Mockup.png";
 import Handwash from "../public/static/assets/Handwash-Bottle-Mockup.png";
 import Moisture from "../public/static/assets/mezzomoisture.png";
+import { AnimatePresence, motion } from "framer-motion";
+import { yAxisVariants, xAxisVariants } from "../utils/animConfig";
 
 export default () => {
   // mock database
@@ -55,7 +55,8 @@ export default () => {
       id: 6
     }
   ];
-  // Grid Item for each object in mock database.
+
+  // DOM Element CSS Grid Item for each object in mock database.
   let items = [];
   for (let i = 0; i < database.length; i++) {
     items.push(
@@ -75,6 +76,12 @@ export default () => {
       </div>
     );
   }
+
+  //reload page function
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   // [] is the initial value of the cart containing product objects
   const [cart, setCart] = useState([]);
   const addToCart = data => {
@@ -109,43 +116,66 @@ export default () => {
   }
   console.log(totalCost);
 
-
   return (
-    <div>
-      <section className="sub-nav">
-        <span>
-          FREE SHIPPING | Domestic orders over $40 | International orders over
-          $60
-        </span>
-      </section>
-      <Navbar />
-      <div className="product-wrapper">
-        <section className="product-hero-wrapper">
-          <div className="product-grid-container">{items}</div>
+    <AnimatePresence>
+      <div>
+        <section className="sub-nav">
+          <span>
+            FREE SHIPPING | Domestic orders over $40 | International orders over
+            $60
+          </span>
         </section>
-        <section className="sidebar-products">
-          <div className="inner">
-            <div className="clipper">
-              <div className="cart-title">
-                <span>Items In Cart: {cart.length}</span>
-                <br />
-                <span>Total Price: $0.00</span>
+        <Navbar />
+        <div className="product-wrapper">
+          <motion.section
+            className="product-hero-wrapper"
+            initial="exit"
+            animate="enter"
+            exit="exit"
+          >
+            <motion.div
+              variants={yAxisVariants}
+              className="product-grid-container"
+            >
+              {items}
+            </motion.div>
+          </motion.section>
+          <motion.section
+            className="sidebar-products"
+            initial="exit"
+            animate="enter"
+            exit="exit"
+          >
+            <motion.div className="inner" variants={xAxisVariants}>
+              <div className="clipper">
+                <div className="cart-title">
+                  <br />
+                  <br />
+                  <span>Total Price: $0.00</span>
+                </div>
               </div>
-            </div>
-            <div className="animate-panel">
-              <div className="cart-title">
-                {cartContents.length > 0 ? (
-                  <div>{cartContents}</div>
-                ) : ( <div>Cart is empty</div>
-                )}
+              <div className="animate-panel">
+                <div className="cart-title">
+                  {cartContents.length > 0 ? (
+                    <div>{cartContents}</div>
+                  ) : (
+                    <div>Cart is empty</div>
+                  )}
+                </div>
+                <div className="product-button-container">
+                  <button>Checkout</button>
+                </div>
+                <div
+                  className="product-button-container"
+                  style={{ paddingTop: "10px" }}
+                >
+                  <button onClick={refreshPage}>Empty Cart</button>
+                </div>
               </div>
-              <div className="product-button-container">
-                <button>Checkout</button>
-              </div>
-            </div>
-          </div>
-        </section>
+            </motion.div>
+          </motion.section>
+        </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 };
